@@ -1,0 +1,66 @@
+<div class="board">
+
+    <div class="board-bar">
+        <p class="board-name">Administração de Leads</p>
+    </div>
+            
+    <div class="board-wrapper">
+            
+        <div class="board-columns" cdkDropListGroup>
+
+            <div class="board-column">
+                <div class="column-title">
+                    Cliente em Potencial      
+                </div>
+
+                <div class="tasks-container"
+                cdkDropList
+                #clientePotList="cdkDropList"
+                [cdkDropListData]="clientePot"
+                (cdkDropListDropped)="drop($event)">
+                    <div class="task" *ngFor="let item of clientePot" cdkDrag>
+                        {{ item }}
+                    </div>
+                </div>  
+            </div>
+
+            <div class="board-column">
+                <div class="column-title">
+                    Dados Confirmados      
+                </div>
+
+                <div class="tasks-container"
+                cdkDropList
+                #dadosConfirmList="cdkDropList"
+                [cdkDropListData]="dadosConfirm"
+                (cdkDropListDropped)="drop($event)">
+                    <div class="task" *ngFor="let item of dadosConfirm" cdkDrag>
+                        {{ item }}
+                    </div>
+                </div>  
+            </div>
+
+            <div class="board-column">
+                <div class="column-title">
+                    Reunião Agendada    
+                </div>
+
+                <div class="tasks-container"
+                cdkDropList
+                #reuniaoAgList="cdkDropList"
+                [cdkDropListData]="reuniaoAg"
+                (cdkDropListDropped)="drop($event)">
+                    <div class="task" *ngFor="let item of reuniaoAg" cdkDrag>
+                        {{ item }}
+                    </div>
+                </div>  
+            </div>
+        </div>
+            
+    </div>
+    
+</div>
+
+
+
+

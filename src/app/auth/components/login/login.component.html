@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Login</h3>
+        <form #f="ngForm" 
+              (ngSubmit)="onSubmit(f)">
+            <div class="form-group">
+              <label for="loginUserName">Usuário</label>
+              <input type="text" 
+                     name="username" 
+                     ngModel 
+                     required 
+                     #username="ngModel"
+                     class="form-control" 
+                     id="loginUserName" 
+                     placeholder="Digite o seu usuário">
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" 
+                     name="password" 
+                     ngModel 
+                     required 
+                     #password="ngModel"
+                     class="form-control" 
+                     id="loginPassword" 
+                     placeholder="Password">
+            </div>
+            <a class="nav-link" 
+            [routerLink]="['/reset-password']" routerLinkActive="active">Esqueci minha senha</a>
+            <button [routerLink]="['/adm-lead']" 
+                    routerLinkActive="active"
+                    type="submit" 
+                    [disabled]="f.invalid"
+                    class="btn btn-primary">Acessar <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                      </svg></button>
+          </form>
+    </div>
+</div> 
